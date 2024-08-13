@@ -3,14 +3,21 @@
 import requests
 
 def top_ten(subreddit):
-    """function that print the titles and top10"""
+    """function that print the titles and top10."""
+    link = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
 
-    subs = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if subs.status_code >= 300:
-        print('None')
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/your_username)"
+    }
+
+    resp = requests.get(link, headers=headers, allow_redirects=False)
+
+    if resp.status_code == 404:
+        print("None")
+        return
+    elif resp.status_code == 200:
+        data = resp.json()
+        for post in data["data"]["children"]:
+            print(post["data"]["title"])
     else:
-        [print(child.get("data").get("title"))
-         for child in subs.json().get("data").get("children")]
+        print("None")
