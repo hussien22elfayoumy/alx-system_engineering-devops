@@ -9,7 +9,7 @@ def recurse(subreddit, hot_list=[], after=''):
     of the subreddit or Reddit."""
 
     link = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    heads = {'User-Agent': 'Mozilla/5.0'}
+    heads = {'User-Agent': 'hussien'}
 
     resp = requests.get(link, headers=heads,
                         params={"limit": 100, "after": after})
