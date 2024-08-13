@@ -9,7 +9,7 @@ def top_ten(subreddit):
     link = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
 
     headers = {
-        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/your_username)"
+        "User-Agent": "hussien"
     }
 
     resp = requests.get(link, headers=headers, allow_redirects=False)
