@@ -1,9 +1,9 @@
 """Task 1 - module to return top ten hot posts"""
 
+import requests
 
 def top_ten(subreddit):
     """function that print the titles and top10"""
-    import requests
 
     sub_info = requests.get("https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
                             .format(subreddit),
