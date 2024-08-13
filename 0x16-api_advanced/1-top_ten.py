@@ -1,9 +1,10 @@
+#!/usr/bin/python3
 """Task 1 - module to return top ten hot posts"""
 
 import requests
 
 def top_ten(subreddit):
-    """function that print the titles and top10."""
+    """Print the titles of the 10 hottest posts on a given subreddit."""
     link = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
 
     headers = {
