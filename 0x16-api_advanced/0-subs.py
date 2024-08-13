@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""TASK 0 GETTING A NUMBER OF SUBCRIBTS"""
+"""Task 0 how many subs? reddit API"""
 import requests
 
 
