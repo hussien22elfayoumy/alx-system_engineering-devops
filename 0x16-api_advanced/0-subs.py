@@ -5,9 +5,8 @@ import requests
 
 def number_of_subscribers(subreddit):
     """Function to Get number of subscribers from reddit API"""
-    url = "https://www.reddit.com/r/{subreddit}/about.json".format(subreddit)
 
-    resp = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+    resp = requests.get("https://www.reddit.com/r/{subreddit}/about.json".format(subreddit), headers={'User-Agent': 'Mozilla/5.0'})
 
     if resp.status_code != 200:
         return 0
