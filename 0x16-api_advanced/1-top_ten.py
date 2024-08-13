@@ -3,6 +3,7 @@
 
 import requests
 
+
 def top_ten(subreddit):
     """Print the titles of the 10 hottest posts on a given subreddit."""
     link = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
